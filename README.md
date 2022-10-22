@@ -1,2 +1,7 @@
-# react-sanity
-Template for React FE and Sanity BE
+# React Frontend / Sanity Backend
+
+## React
+`npm start`
+
+## Sanity
+`sanity start`
