@@ -1,26 +1,43 @@
-import React, {useState, useEffect} from 'react';
-import {client} from '../../client';
+import React, { useState, useEffect } from "react";
+import { client } from "../../client";
 
 const Navigation = () => {
-    const [team, setTeam] = useState([])
+  const [entry, setEntry] = useState([]);
+  const [category, setCategory] = useState([]);
 
-    useEffect(() => {
-      const query = '*[_type == "team"]';
+  useEffect(() => {
+    const query = '*[_type == "portfolioEntries"]';
 
-      client.fetch(query)
-        .then((data) => {
-            setTeam(data);
-        })
-    }, [])
-    
+    client.fetch(query).then((data) => {
+      setEntry(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const query = '*[_type == "portfolioCategory"]';
+
+    client.fetch(query).then((data1) => {
+      setCategory(data1);
+    });
+  }, []);
 
   return (
     <ul>
-        {team.map(item => (
-            <li key={`link-${item}`}>{item.firstName} {item.surname}</li>
-        ))}       
+      {entry.map((item) => (
+        <li key={`link-${item}`}>
+          {item.clientName}
+            {category.filter(cat => item.portfolioCategory._ref === cat._id)
+            .map(cat => {
+              return (
+                <li key={`link-${cat}`}>
+                  {cat.categoryName}
+                </li>
+              )
+            })}
+        </li>
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
