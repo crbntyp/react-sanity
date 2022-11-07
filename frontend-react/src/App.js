@@ -10,11 +10,8 @@ import { Navigation } from './components/';
 
 const App = () => {
   return (
-    <section>
+    <section className=''>
       <Navigation />
-      <About />
-      <Header />
-      <Footer />
     </section>
   );
 }

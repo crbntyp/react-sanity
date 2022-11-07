@@ -1,1 +1,5 @@
-export {default as Navigation} from './Navigation/Navigation';
+import Navigation from './navigation/Navigation';
+
+export {
+  Navigation
+}
