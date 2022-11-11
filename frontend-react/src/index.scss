@@ -1,7 +1,18 @@
-@use './components/components.scss' as *;
-@use './containers/containers.scss' as *;
+@use './components/components' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  html, body{
+    @apply bg-stone-900
+  }
+}
+
+body{
+  padding: 20px;
+}
 

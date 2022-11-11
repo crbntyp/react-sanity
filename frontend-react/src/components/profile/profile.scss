@@ -1,0 +1,14 @@
+@layer components{
+  .profile-icon{
+    @apply w-[100%] relative
+  }
+  .profile-icon__header{
+    @apply text-white w-full p-[10px] pr-[50px] bg-stone-800 font-semibold tracking-wider uppercase text-[11px]
+  }
+  .profile-icon__level{
+    @apply absolute top-0 left-0 w-full block z-[2]
+  }
+  .faction-crest{
+    @apply absolute bottom-[15px] right-[10px] w-[30px] z-10
+  }
+}
